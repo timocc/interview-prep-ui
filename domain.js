@@ -1,17 +1,16 @@
-window.InterviewPrepDomain = (() => {
-  const categoryOrder = ["DSA", "System Design", "DB Internals"];
-  const statusLabels = {
+export const categoryOrder = ["DSA", "System Design", "DB Internals"];
+export const statusLabels = {
     must: "Must do soon",
     active: "Active this week",
     parked: "Parked",
     done: "Done"
   };
 
-  function cloneSeed(seed) {
+export function cloneSeed(seed) {
     return JSON.parse(JSON.stringify(seed));
   }
 
-  function weekStart(date = new Date()) {
+export function weekStart(date = new Date()) {
     const d = new Date(date);
     const day = d.getDay();
     const diff = day === 0 ? -6 : 1 - day;
@@ -19,40 +18,40 @@ window.InterviewPrepDomain = (() => {
     return d.toISOString().slice(0, 10);
   }
 
-  function daysSince(dateString) {
+export function daysSince(dateString) {
     if (!dateString) return 99;
     const then = new Date(`${dateString}T00:00:00`);
     const now = new Date();
     return Math.max(0, Math.round((now - then) / 86400000));
   }
 
-  function hoursFromMinutes(minutes) {
+export function hoursFromMinutes(minutes) {
     return Math.round((minutes / 60) * 10) / 10;
   }
 
-  function getItem(state, id) {
+export function getItem(state, id) {
     return state.resources.find((item) => item.id === id);
   }
 
-  function getSelectedItems(state) {
+export function getSelectedItems(state) {
     return state.weeklyPlan.selectedItemIds.map((id) => getItem(state, id)).filter(Boolean);
   }
 
-  function getSessionsForItem(state, itemId) {
+export function getSessionsForItem(state, itemId) {
     return state.sessions.filter((session) => session.itemId === itemId);
   }
 
-  function actualHours(state) {
+export function actualHours(state) {
     return hoursFromMinutes(state.sessions.reduce((sum, session) => sum + Number(session.actualMinutes || 0), 0));
   }
 
-  function completionRate(state) {
+export function completionRate(state) {
     if (!state.sessions.length) return 0;
     const completed = state.sessions.filter((session) => session.completed).length;
     return Math.round((completed / state.sessions.length) * 100);
   }
 
-  function consistency(state) {
+export function consistency(state) {
     const uniqueDays = new Set(state.sessions.map((session) => session.date));
     const count = uniqueDays.size;
     return {
@@ -69,7 +68,7 @@ window.InterviewPrepDomain = (() => {
    *
    * @returns {Array<{ word: string, count: number, examples: string[] }>}
    */
-  function repeatedBlockers(state) {
+export function repeatedBlockers(state) {
     const words = new Map();
     const sentences = state.sessions.map((s) => s.blocker || "").filter(Boolean);
     const stop = new Set(["the", "and", "for", "too", "with", "before", "after", "long", "into", "from", "that", "this"]);
@@ -91,20 +90,20 @@ window.InterviewPrepDomain = (() => {
       }));
   }
 
-  function confidenceTrend(state) {
+export function confidenceTrend(state) {
     return state.sessions
       .slice(-6)
       .map((session) => ({ date: session.date.slice(5), confidence: Number(session.confidenceAfter || 0) }));
   }
 
-  function categoryCounts(items) {
+export function categoryCounts(items) {
     return items.reduce((acc, item) => {
       acc[item.category] = (acc[item.category] || 0) + 1;
       return acc;
     }, {});
   }
 
-  function targetForCategory(plan, category) {
+export function targetForCategory(plan, category) {
     if (category === "DSA") return plan.targetDSA;
     if (category === "System Design") return plan.targetSystemDesign;
     if (category === "DB Internals") return plan.targetDBInternals;
@@ -132,7 +131,7 @@ window.InterviewPrepDomain = (() => {
    *   parkedPenalty    -12   item.status === "parked"
    *   donePenalty      -80   item.status === "done" (effectively removes it)
    */
-  function scoreItem(state, item, options = {}) {
+export function scoreItem(state, item, options = {}) {
     const selected = state.weeklyPlan.selectedItemIds.includes(item.id);
     const sessions = getSessionsForItem(state, item.id);
     const lastSession = sessions.at(-1);
@@ -186,7 +185,7 @@ window.InterviewPrepDomain = (() => {
     };
   }
 
-  function recommend(state, options = {}) {
+export function recommend(state, options = {}) {
     const candidates = state.resources.filter((item) => item.status !== "done");
     const scored = candidates.map((item) => ({ item, recommendation: scoreItem(state, item, options) }));
     scored.sort((a, b) => b.recommendation.score - a.recommendation.score);
@@ -203,7 +202,7 @@ window.InterviewPrepDomain = (() => {
    *   reinforcement — highest-scoring item excluding primary, only when
    *                   primary effective confidence ≤ 2; null otherwise
    */
-  function recommendWithContext(state) {
+export function recommendWithContext(state) {
     const primary = recommend(state, { availableMinutes: 75 });
     const fallback30 = recommend(state, { availableMinutes: 30 });
 
@@ -229,7 +228,7 @@ window.InterviewPrepDomain = (() => {
    * scored ordering. Unfinished low-confidence items from the prior plan
    * are preserved unconditionally before slots are filled by scoring.
    */
-  function autoSuggestPlan(state) {
+export function autoSuggestPlan(state) {
     const current = state.weeklyPlan;
     const selected = [];
 
@@ -281,7 +280,7 @@ window.InterviewPrepDomain = (() => {
    *
    * @returns {{ targetDSA: number, targetSystemDesign: number, targetDBInternals: number }}
    */
-  function rescope(state) {
+export function rescope(state) {
     const day = new Date().getDay(); // 0=Sun
     const idx = day === 0 ? 6 : day - 1; // Mon=0 … Sun=6
     const remaining = Math.max(0, 5 - idx);
@@ -295,7 +294,7 @@ window.InterviewPrepDomain = (() => {
     };
   }
 
-  function momentumMessage(state) {
+export function momentumMessage(state) {
     const con = consistency(state);
     const rate = completionRate(state);
     if (con.activeDays === 0) return "No judgment. Start with a 60-minute session and make the week real.";
@@ -304,7 +303,7 @@ window.InterviewPrepDomain = (() => {
     return "The system is warming up. One more logged session matters more than a perfect plan.";
   }
 
-  function promote(state, id) {
+export function promote(state, id) {
     const item = getItem(state, id);
     if (!item || item.status === "done") return;
     if (item.status === "parked") item.status = "must";
@@ -314,7 +313,7 @@ window.InterviewPrepDomain = (() => {
     }
   }
 
-  function demote(state, id) {
+export function demote(state, id) {
     const item = getItem(state, id);
     if (!item || item.status === "done") return;
     if (item.status === "active") item.status = "must";
@@ -322,7 +321,7 @@ window.InterviewPrepDomain = (() => {
     state.weeklyPlan.selectedItemIds = state.weeklyPlan.selectedItemIds.filter((itemId) => itemId !== id);
   }
 
-  function completeItem(state, id) {
+export function completeItem(state, id) {
     const item = getItem(state, id);
     if (item) {
       item.status = "done";
@@ -330,7 +329,7 @@ window.InterviewPrepDomain = (() => {
     }
   }
 
-  function addSession(state, session) {
+export function addSession(state, session) {
     const item = getItem(state, session.itemId);
     const datedSession = {
       id: `session-${Date.now()}`,
@@ -351,28 +350,3 @@ window.InterviewPrepDomain = (() => {
     return datedSession;
   }
 
-  return {
-    actualHours,
-    addSession,
-    autoSuggestPlan,
-    categoryOrder,
-    cloneSeed,
-    completionRate,
-    confidenceTrend,
-    consistency,
-    daysSince,
-    demote,
-    getItem,
-    getSelectedItems,
-    hoursFromMinutes,
-    momentumMessage,
-    promote,
-    recommend,
-    recommendWithContext,
-    repeatedBlockers,
-    rescope,
-    scoreItem,
-    statusLabels,
-    weekStart
-  };
-})();
