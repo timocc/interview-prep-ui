@@ -1,4 +1,4 @@
-window.InterviewPrepGitHubSync = (() => {
+export default (() => {
   const CONFIG_KEY = "interview-prep-github-config";
   const API = "https://api.github.com";
 
