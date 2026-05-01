@@ -11,7 +11,7 @@
 //   2. Add an entry to SOURCE_FILES in scripts/import-csv.js
 //   3. Run: node scripts/import-csv.js
 
-window.InterviewPrepSeed = {
+export default {
   "resources": [
     {
       "id": "lc-1-two-sum",
