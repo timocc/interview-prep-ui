@@ -1,5 +1,4 @@
-window.InterviewPrepNotionAdapter = (() => {
-  /**
+/**
    * @typedef {Object} ConnectorFetchShape
    * Expected shape of a single row returned by a Notion connector.
    * Field names match the column names in the Notion database.
@@ -17,7 +16,7 @@ window.InterviewPrepNotionAdapter = (() => {
    * @property {string}  [Wave]           - Extra tag column for LC Problems
    */
 
-  const sourceMap = {
+export const sourceMap = {
     "LC Problems w/ Waves": {
       dataSourceUrl: "collection://30c55905-e48b-818a-9b2e-000b4e7aaa70",
       title: "Problem Name",
@@ -99,7 +98,7 @@ window.InterviewPrepNotionAdapter = (() => {
    * @param {string} sourceDatabase
    * @returns {string}
    */
-  function getStableId(notionRow, sourceDatabase) {
+export function getStableId(notionRow, sourceDatabase) {
     if (notionRow.url && notionRow.url.startsWith("http")) return notionRow.url;
     const map = sourceMap[sourceDatabase];
     const title = (map ? notionRow[map.title] : null) || "untitled";
@@ -109,7 +108,7 @@ window.InterviewPrepNotionAdapter = (() => {
       .replace(/^-|-$/g, "");
   }
 
-  function normalizeNotionStatus(status) {
+export function normalizeNotionStatus(status) {
     if (!status) return "parked";
     const s = status.toLowerCase().trim();
     if (s === "done" || s === "completed" || s === "finished" || s === "closed") return "done";
@@ -126,7 +125,7 @@ window.InterviewPrepNotionAdapter = (() => {
     return 2;
   }
 
-  function toResourceItem(notionRow, sourceDatabase) {
+export function toResourceItem(notionRow, sourceDatabase) {
     const map = sourceMap[sourceDatabase];
     if (!map) throw new Error(`No Notion mapping for ${sourceDatabase}`);
     const title = notionRow[map.title] || "Untitled";
@@ -162,7 +161,7 @@ window.InterviewPrepNotionAdapter = (() => {
    * @param {object[]} incoming  - freshly normalized ResourceItem objects
    * @returns {object[]}         - merged resources array (new array, no mutation)
    */
-  function mergeResources(existing, incoming) {
+export function mergeResources(existing, incoming) {
     const incomingById = new Map(incoming.map((item) => [item.id, item]));
     const existingIds = new Set(existing.map((item) => item.id));
 
@@ -191,7 +190,7 @@ window.InterviewPrepNotionAdapter = (() => {
     return merged;
   }
 
-  async function syncPreview() {
+export async function syncPreview() {
     // TODO (sync step 1 — read): Call the Notion connector for each
     // dataSourceUrl in sourceMap, normalize rows with toResourceItem,
     // then call mergeResources(state.resources, normalized) and persist.
@@ -211,6 +210,3 @@ window.InterviewPrepNotionAdapter = (() => {
     };
   }
 
-  window.__INTERVIEW_PREP_NOTION_MAPPING__ = sourceMap;
-  return { getStableId, mergeResources, normalizeNotionStatus, sourceMap, syncPreview, toResourceItem };
-})();
