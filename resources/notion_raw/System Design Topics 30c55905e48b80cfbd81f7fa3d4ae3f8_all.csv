@@ -1,0 +1,41 @@
+﻿Topic Name,Category,Date End,Date Start,Phase,Priority,Status,Type
+Design a Real-Time Presence System,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design a Rate Limiter,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+"Design an E-Commerce Backend (Cart, Inventory, Orders)",Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design an Analytics / Event Ingestion Pipeline,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design a Search Autocomplete Service,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design a Distributed Cache Service,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design a Notification and Alerts System,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+Design a YouTube-Style Streaming Platform,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture
+Design a WhatsApp-Style Chat System,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+Design an Instagram-Style Photo Sharing System,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+Design a Twitter-Style Feed,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+Design a URL Shortener,Case Study,,,Phase 8 - Case Studies,High,Not started,Architecture
+Designing for Data Locality,Distributed systems,,,Phase 6 - Designing for Data Locality,Medium,Not started,Concept
+Hotspot and Data Skew Mitigation,Distributed systems,,,Phase 3 - Performance / Traffic,High,Not started,Concept
+Scheduling and Background Job Processing,Distributed systems,,,Phase 5 - Async & Event-Driven Systems,Medium,Not started,Architecture
+Service Discovery and Configuration Management,Distributed systems,,,Phase 5 - Async & Event-Driven Systems,Medium,Not started,Architecture
+Distributed Transactions and Sagas (High-Level),Distributed systems,,,Phase 4 - Distributed Systems,Medium,Not started,Concept
+Idempotency and Delivery Semantics,Distributed systems,,,Phase 4 - Distributed Systems,Medium,Not started,Concept
+Event-Driven Architecture Basics,Distributed systems,,,Phase 5 - Async & Event-Driven Systems,Medium,Not started,Concept
+Message Queues and Pub/Sub Systems,Distributed systems,,,Phase 5 - Async & Event-Driven Systems,High,Not started,Concept
+Distributed Systems Failure Modes and Recovery,Distributed systems,,,Phase 4 - Distributed Systems,Medium,Not started,Concept
+"Reliability Patterns (Retries, Circuit Breakers, Bulkheads)",Distributed systems,,,Phase 4 - Distributed Systems,High,Not started,Architecture
+CAP & PACELC in Real Systems,Distributed systems,,,Phase 4 - Distributed Systems,High,Not started,Concept
+"Consistency Models (Strong, Eventual, Causal)",Distributed systems,,,Phase 4 - Distributed Systems,High,Not started,Concept
+Sharding and Partitioning Strategies,Distributed systems,,,Phase 2 - Data & Storage,High,Not started,Concept
+Replication Strategies (Sync vs Async),Distributed systems,,,Phase 2 - Data & Storage,High,Not started,Concept
+System Design Interview Framework and Trade-Off Communication,Fundamentals,,,Phase 1 - Core Thinking,High,Not started,Mock Interview
+"Security and Authentication at Scale (Tokens, Gateways)",Fundamentals,,,Phase 7 - Architecture Shape,Medium,Not started,Concept
+Monolith vs Microservices Architectures,Fundamentals,,,Phase 7 - Architecture Shape,High,Not started,Architecture
+Back-of-the-Envelope Estimation in System Design,Fundamentals,,,Phase 1 - Core Thinking,High,Not started,Mock Interview
+Rate Limiting and Throttling Strategies,Fundamentals,,,Phase 3 - Performance / Traffic,High,Not started,Concept
+"Observability: Logging, Metrics, and Monitoring",Fundamentals,,,Phase 6 - Designing for Data Locality,Medium,Not started,Concept
+Load Balancing Fundamentals,Fundamentals,,,Phase 3 - Performance / Traffic,High,Not started,Concept
+Cache Invalidation Strategies,Fundamentals,,,Phase 3 - Performance / Traffic,High,Not started,Concept
+Caching Fundamentals and Patterns,Fundamentals,,,Phase 3 - Performance / Traffic,High,Not started,Concept
+SQL vs NoSQL Databases in System Design,Fundamentals,,,Phase 2 - Data & Storage,High,Not started,Concept
+Data Modeling for Scalable Systems,Fundamentals,,,Phase 2 - Data & Storage,High,Not started,Concept
+API Design for Large-Scale Systems,Fundamentals,,,Phase 1 - Core Thinking,High,Not started,Concept
+"Core System Qualities: Scalability, Reliability, Availability, Performance",Fundamentals,,,Phase 1 - Core Thinking,High,Not started,Concept
+Design a Metrics Aggregation System,Case Study,,,Phase 8 - Case Studies,Medium,Not started,Architecture

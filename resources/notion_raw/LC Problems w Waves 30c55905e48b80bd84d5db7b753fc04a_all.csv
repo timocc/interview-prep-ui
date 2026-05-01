@@ -1,0 +1,90 @@
+﻿Problem Name,Property,Category,Difficulty,Key Concepts,Pattern,Planned Date,Status,Topic,Wave
+Two Sum,1,Linear Structures,Easy,"Hash maps, pair search",Hash Table,,Not started,Array,Wave 1
+Best Time to Buy/Sell Stock,121,Linear Structures,Easy,Tracking min/max,Single Pass,,Not started,Array,Wave 1
+Contains Duplicate,217,Linear Structures,Easy,Set operations,Hash Set,,Not started,Array,Wave 1
+Valid Anagram,242,Linear Structures,Easy,String comparison,Hash Table,,Not started,String,Wave 1
+Valid Palindrome,125,Linear Structures,Easy,String validation,Two Pointers,,Not started,String,Wave 1
+Longest Substring Without Repeating,3,Linear Structures,Medium,Window optimization,Sliding Window,,Not started,String,Wave 1
+Longest Repeating Character Replacement,424,Linear Structures,Medium,Character frequency,Sliding Window,,Not started,String,Wave 1
+Group Anagrams,49,Linear Structures,Medium,String categorization,Hash Table,,Not started,String,Wave 1
+Subarray Sum Equals K,560,Algorithm Techniques,Medium,Cumulative sum + hash map,Hash Map,,Not started,Prefix Sum,Wave 1
+Contiguous Array,525,Algorithm Techniques,Medium,Balance count with hash map,Hash Map,,Not started,Prefix Sum,Wave 1
+Binary Subarrays With Sum,930,Algorithm Techniques,Medium,Target sum counting,Hash Map,,Not started,Prefix Sum,Wave 1
+Product of Array Except Self,238,Linear Structures,Medium,Array manipulation,Prefix/Suffix,,Not started,Array,Wave 1
+Maximum Subarray,53,Linear Structures,Medium,Running sum,Kadane's Algorithm,,Not started,Array,Wave 1
+3Sum,15,Linear Structures,Medium,Sorted array traversal,Two Pointers,,Not started,Array,Wave 1
+Container With Most Water,11,Linear Structures,Medium,Area calculation,Two Pointers,,Not started,Array,Wave 1
+Minimum Window Substring,76,Linear Structures,Hard,Multi-character tracking,Sliding Window,,Not started,String,Wave 1
+Reverse Linked List,206,Linear Structures,Easy,Pointer manipulation,Iterative/Recursive,,Not started,Linked List,Wave 2
+Merge Two Sorted Lists,21,Linear Structures,Easy,List merging,Two Pointers,,Not started,Linked List,Wave 2
+Linked List Cycle,141,Linear Structures,Easy,Cycle detection,Fast & Slow Pointers,,Not started,Linked List,Wave 2
+Remove Nth Node From End,19,Linear Structures,Medium,List traversal,Two Pointers,,Not started,Linked List,Wave 2
+Reorder List,143,Linear Structures,Medium,Find middle + reverse + merge,Multiple Patterns,,Not started,Linked List,Wave 2
+LRU Cache,146,Linear Structures,Medium,Cache implementation,Design (Hash + DLL),,Not started,Linked List,Wave 2
+Min Stack,155,Linear Structures,Medium,O(1) min retrieval,Design,,Not started,Stack,Wave 2
+Daily Temperatures,739,Linear Structures,Medium,Next greater element,Monotonic Stack,,Not started,Stack,Wave 2
+Largest Rectangle in Histogram,84,Linear Structures,Hard,Area calculation,Monotonic Stack,,Not started,Stack,Wave 2
+Trapping Rain Water,42,Linear Structures,Hard,Water between bars,Monotonic Stack,,Not started,Stack,Wave 2
+Sliding Window Maximum,239,Linear Structures,Hard,Max in sliding window,Monotonic Deque,,Not started,Queue,Wave 2
+Invert Binary Tree,226,Tree & Hierarchical,Easy,Tree traversal,DFS,,Not started,Binary Tree,Wave 3
+Maximum Depth of Binary Tree,104,Tree & Hierarchical,Easy,Recursion,DFS/BFS,,Not started,Binary Tree,Wave 3
+Same Tree,100,Tree & Hierarchical,Easy,Tree comparison,DFS,,Not started,Binary Tree,Wave 3
+Subtree of Another Tree,572,Tree & Hierarchical,Easy,Pattern matching,DFS,,Not started,Binary Tree,Wave 3
+Binary Tree Level Order Traversal,102,Tree & Hierarchical,Medium,Queue-based traversal,BFS,,Not started,Binary Tree,Wave 3
+Validate Binary Search Tree,98,Tree & Hierarchical,Medium,BST validation,DFS + Range,,Not started,BST,Wave 3
+Kth Smallest Element in BST,230,Tree & Hierarchical,Medium,BST ordering,In-order Traversal,,Not started,BST,Wave 3
+Construct Tree from Preorder/Inorder,105,Tree & Hierarchical,Medium,Tree reconstruction,Divide & Conquer,,Not started,Binary Tree,Wave 3
+Binary Tree Maximum Path Sum,124,Tree & Hierarchical,Hard,Path optimization,DFS + Global Max,,Not started,Binary Tree,Wave 3
+Serialize/Deserialize Binary Tree,297,Tree & Hierarchical,Hard,Tree encoding,BFS/DFS,,Not started,Binary Tree,Wave 3
+Clone Graph,133,Graph,Medium,Graph copying,DFS/BFS,,Not started,Graph Traversal,Wave 4
+Number of Islands,200,Graph,Medium,Connected components,DFS/BFS,,Not started,Graph Traversal,Wave 4
+Pacific Atlantic Water Flow,417,Graph,Medium,Multi-source search,Multi-source BFS/DFS,,Not started,Graph Traversal,Wave 4
+Course Schedule,207,Graph,Medium,DFS/Kahn's algorithm,Cycle Detection,,Not started,Topological Sort,Wave 4
+Course Schedule II,210,Graph,Medium,Order determination,Ordering,,Not started,Topological Sort,Wave 4
+Redundant Connection,684,Graph,Medium,Find redundant edge,Cycle Detection,,Not started,Union Find,Wave 4
+Accounts Merge,721,Graph,Medium,Merge by email,Grouping,,Not started,Union Find,Wave 4
+Word Ladder,127,Graph,Hard,Shortest path,BFS,,Not started,Graph Traversal,Wave 4
+Alien Dictionary,269,Graph,Hard,Build graph + topo sort,Graph Construction,,Not started,Topological Sort,Wave 4
+Redundant Connection II,685,Graph,Hard,Directed graph cycle,Cycle Detection,,Not started,Union Find,Wave 4
+Kth Largest Element in Array,215,Tree & Hierarchical,Medium,Quick select / heap,Min Heap,,Not started,Heap,Wave 5
+Top K Frequent Elements,347,Tree & Hierarchical,Medium,Heap / bucket sort,Frequency Count,,Not started,Heap,Wave 5
+Find K Pairs with Smallest Sums,373,Algorithm Techniques,Medium,Pair selection,Heap Selection,,Not started,K-way Merge,Wave 5
+Kth Smallest Element in Sorted Matrix,378,Algorithm Techniques,Medium,Matrix with heap,Matrix Traversal,,Not started,K-way Merge,Wave 5
+Merge K Sorted Lists,23,Algorithm Techniques,Hard,Multi-way merge with heap,Heap Merge,,Not started,K-way Merge,Wave 5
+Find Median from Data Stream,295,Tree & Hierarchical,Hard,Max heap + min heap,Two Heaps,,Not started,Heap,Wave 5
+Sliding Window Median,480,Tree & Hierarchical,Hard,Dynamic median,Two Heaps,,Not started,Heap,Wave 5
+IPO,502,Tree & Hierarchical,Hard,Greedy + two heaps,Two Heaps,,Not started,Heap,Wave 5
+Merge Intervals,56,Algorithm Techniques,Medium,Overlap detection,Merging,,Not started,Intervals,Wave 5
+Insert Interval,57,Algorithm Techniques,Medium,Insert and merge,Merging,,Not started,Intervals,Wave 5
+Non-overlapping Intervals,435,Algorithm Techniques,Medium,Maximum non-overlapping,Greedy Selection,,Not started,Intervals,Wave 5
+Interval List Intersections,986,Algorithm Techniques,Medium,Find intersections,Two Pointers,,Not started,Intervals,Wave 5
+Meeting Rooms II,253,Algorithm Techniques,Medium,Min rooms needed,Min Heap,,Not started,Intervals,Wave 5
+Climbing Stairs,70,Algorithm Paradigms,Easy,Fibonacci pattern,1D DP,,Not started,Dynamic Programming,Wave 6
+House Robber,198,Algorithm Paradigms,Medium,Sequential optimization,1D DP,,Not started,Dynamic Programming,Wave 6
+House Robber II,213,Algorithm Paradigms,Medium,Circular array,1D DP,,Not started,Dynamic Programming,Wave 6
+Coin Change,322,Algorithm Paradigms,Medium,Minimum coins,Unbounded Knapsack,,Not started,Dynamic Programming,Wave 6
+Coin Change II,518,Algorithm Paradigms,Medium,Combination count,Unbounded Knapsack,,Not started,Dynamic Programming,Wave 6
+Longest Increasing Subsequence,300,Algorithm Paradigms,Medium,Subsequence tracking,1D DP,,Not started,Dynamic Programming,Wave 6
+Word Break,139,Algorithm Paradigms,Medium,Dictionary lookup,1D DP,,Not started,Dynamic Programming,Wave 6
+Decode Ways,91,Algorithm Paradigms,Medium,String decoding,1D DP,,Not started,Dynamic Programming,Wave 6
+Unique Paths,62,Algorithm Paradigms,Medium,Grid traversal,2D DP,,Not started,Dynamic Programming,Wave 6
+Maximum Product Subarray,152,Algorithm Paradigms,Medium,Product tracking,1D DP,,Not started,Dynamic Programming,Wave 6
+Partition Equal Subset Sum,416,Algorithm Paradigms,Medium,Subset selection,0/1 Knapsack,,Not started,Dynamic Programming,Wave 6
+Longest Common Subsequence,1143,Algorithm Paradigms,Medium,String matching,2D DP,,Not started,Dynamic Programming,Wave 6
+Edit Distance,72,Algorithm Paradigms,Hard,String transformation,2D DP,,Not started,Dynamic Programming,Wave 6
+Subsets,78,Algorithm Paradigms,Medium,Subset generation,Combinations,,Not started,Backtracking,Wave 7
+Combination Sum,39,Algorithm Paradigms,Medium,Target sum,Combinations,,Not started,Backtracking,Wave 7
+Combination Sum II,40,Algorithm Paradigms,Medium,Target with duplicates,Combinations,,Not started,Backtracking,Wave 7
+Permutations,46,Algorithm Paradigms,Medium,Order matters,Permutations,,Not started,Backtracking,Wave 7
+Permutations II,47,Algorithm Paradigms,Medium,With duplicates,Permutations,,Not started,Backtracking,Wave 7
+Word Search,79,Algorithm Paradigms,Medium,2D DFS,Grid Search,,Not started,Backtracking,Wave 7
+Palindrome Partitioning,131,Algorithm Paradigms,Medium,Palindrome splits,String Partition,,Not started,Backtracking,Wave 7
+Generate Parentheses,22,Algorithm Paradigms,Medium,Valid combinations,Constraint Building,,Not started,Backtracking,Wave 7
+Word Search II,212,Tree & Hierarchical,Hard,Board + Trie,Backtracking,,Not started,Trie,Wave 7
+Binary Search,704,Algorithm Techniques,Easy,Classic binary search,Basic Template,,Not started,Binary Search,Wave 8
+Search in Rotated Sorted Array,33,Algorithm Techniques,Medium,Pivot finding,Modified Search,,Not started,Binary Search,Wave 8
+Find Minimum in Rotated Sorted Array,153,Algorithm Techniques,Medium,Find minimum,Modified Search,,Not started,Binary Search,Wave 8
+Search a 2D Matrix,74,Algorithm Techniques,Medium,Matrix flattening,2D Search,,Not started,Binary Search,Wave 8
+Koko Eating Bananas,875,Algorithm Techniques,Medium,Optimization problem,Search on Answer,,Not started,Binary Search,Wave 8
+Capacity To Ship Packages,1011,Algorithm Techniques,Medium,Capacity optimization,Search on Answer,,Not started,Binary Search,Wave 8
+Time Based Key-Value Store,981,Algorithm Techniques,Medium,Timestamp search,Design,,Not started,Binary Search,Wave 8
