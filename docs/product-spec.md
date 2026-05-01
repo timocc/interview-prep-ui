@@ -93,17 +93,33 @@ The UI is calm, technical, and opinionated:
 - Small data signals instead of heavy analytics.
 - No marketing-style hero, decorative gradients, or generic productivity visuals.
 
+## Persistence architecture
+
+State persists in `localStorage` and is optionally synced to a remote via a connector. On load the connector pulls the latest state; on session finish it pushes a commit. The two sources are merged by session count (more sessions wins). Manual fallback is always available via Export/Import snapshot.
+
+## Sync connector interface
+
+The app ships `githubSync.js` as a reference connector (GitHub Contents API). Connectors are registered on `window.InterviewPrepGitHubSync` and must implement:
+
+```js
+isConfigured()                    // → bool
+pull()                            // → Promise<{ state, sha } | null>
+push(state, label)                // → Promise<void>
+showConfigDialog()                // → void  (opens config UI)
+updateSyncIndicator()             // → void  (refreshes sidebar dot)
+```
+
+The app assigns `window.InterviewPrepGitHubSync` at load time and treats it as an optional seam — all sync calls are guarded by `if (GS && GS.isConfigured())`. Any module that satisfies this interface can be swapped in without touching `app.js` or `domain.js`.
+
 ## Known limitations
 
-- State is in memory for the current browser session.
-- The Notion adapter is a mapping/stub, not a live sync.
-- Importing a previously exported snapshot is not implemented.
-- No authentication or multi-device persistence.
+- State merge is session-count-based; concurrent edits on two devices will lose the lower-count branch.
+- The Notion adapter is a schema mapping/stub, not a live sync.
+- No authentication — the connector PAT is stored in localStorage.
 
 ## Next product bets
 
-- Add a tiny SQLite or serverless persistence layer.
-- Implement Notion read sync for the mapped data sources.
-- Add Notion writeback for weekly plan and session logs.
-- Add an import snapshot flow.
-- Add calendar-aware daily planning with missed-day re-scoping.
+- Notion read connector (pull ResourceItems from live Notion databases).
+- Notion write connector (push weekly plan and session logs back to Notion).
+- Calendar-aware daily planning with missed-day re-scoping.
+- Conflict-safe state merge (timestamp or vector clock instead of session count).
